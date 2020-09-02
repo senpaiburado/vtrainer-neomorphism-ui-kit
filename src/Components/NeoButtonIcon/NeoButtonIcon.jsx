@@ -4,7 +4,7 @@ import { createUseStyles, ThemeProvider, useTheme } from "react-jss";
 
 const styles = createUseStyles({
   root: {
-    "& svg": {
+    "& img": {
       width: ({ props }) => props.iconWidth || "25px",
       height: ({ props }) => props.iconHeight || "25px"
     }
@@ -12,11 +12,12 @@ const styles = createUseStyles({
 });
 
 function NeoButtonIconSVG(props) {
-  console.log(props);
   const classes = styles({ props });
   return (
     <NeoBaseButton height={props.height} width={props.width}>
-      <div className={classes.root}>{props.icon}</div>
+      <div className={classes.root}>
+        <img src={props.src} alt={""} />
+      </div>
     </NeoBaseButton>
   );
 }

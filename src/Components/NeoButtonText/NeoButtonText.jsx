@@ -5,7 +5,7 @@ import { createUseStyles, ThemeProvider, useTheme } from "react-jss";
 const styles = createUseStyles({
   root: {
     color: ({ props }) => props.color || "#fff",
-    fontSize: ({ props }) => props.textSize || "14pt"
+    fontSize: ({ props }) => props.textSize || "12pt"
   }
 });
 
