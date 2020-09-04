@@ -7,6 +7,9 @@ const styles = createUseStyles({
     "& svg": {
       width: ({ props }) => props.iconWidth || "25px",
       height: ({ props }) => props.iconHeight || "25px"
+    },
+    "&:hover svg": {
+	    fill: "#fff"
     }
   }
 });

@@ -1,22 +1,27 @@
 import React from "react";
+import NeoBaseComponent from "../NeoBaseComponent";
+import { createUseStyles, useTheme } from "react-jss";
 
-const styles = (props = {}) => ({
+const styles = createUseStyles({
   button: {
-    borderRadius: process.env.REACT_APP_STYLE_BORDER_RADIUS,
-    width: props.width || "60px",
-    height: props.height || "50px",
     display: "flex",
-    color: "white",
+    color: ({theme}) => theme.textColor || "white",
     alignItems: "center",
     justifyContent: "center",
-    background: "linear-gradient(144.05deg, #32383E -69.07%, #17191C 122.22%)",
-    boxShadow:
-      "-4px -2px 16px rgba(195, 200, 205, 0.09), 4px 4px 18px rgba(0, 0, 0, 0.5)"
+    width: "100%",
+    height: "100%"
   }
 });
 
 const NeoBaseButton = (props) => {
-  return <div style={styles(props).button}>{props.children}</div>;
+  const theme = useTheme();
+  const classes = styles({...props, theme});
+  return (
+    <NeoBaseComponent width={"70px"} height={"50px"}>
+      <div className={classes.button}>
+        {props.children}
+      </div>
+    </NeoBaseComponent>);
 };
 
 export default NeoBaseButton;
