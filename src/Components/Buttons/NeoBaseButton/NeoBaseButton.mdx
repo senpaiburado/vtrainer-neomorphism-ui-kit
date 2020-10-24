@@ -1,0 +1,35 @@
+---
+name: NeoBaseButton
+route: /buttons/NeoBaseButton
+menu: Buttons
+---
+
+import { Playground, Props } from 'docz'
+import NeoBaseButton from '../NeoBaseButton'
+import NeoBaseButtonCounter from './ButtonCounter'
+
+# NeoBaseButton
+
+## Props
+<Props of={NeoBaseButton} />
+
+## Basic usage
+
+<Playground>
+  <NeoBaseButton></NeoBaseButton>
+</Playground>
+
+<Playground>
+  {() => {
+    const [counter, setCounter] = React.useState(0)
+    return (
+      <>
+        <div>{counter}</div>
+        <NeoBaseButton width={75} onClick={() => setCounter(counter => counter+1)}>
+          Increase
+        </NeoBaseButton>
+        
+      </>
+    )
+  }}
+</Playground>

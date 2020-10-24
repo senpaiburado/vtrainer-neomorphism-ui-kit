@@ -1,0 +1,31 @@
+---
+name: NeoBaseComponent
+route: /NeoBaseComponent
+---
+
+import { Playground, Props } from 'docz'
+import NeoBaseComponent from './NeoBaseComponent'
+
+# NeoBaseComponent
+
+## Props
+<Props of={NeoBaseComponent} />
+
+## Basic usage
+
+<Playground>
+  <NeoBaseComponent></NeoBaseComponent>
+</Playground>
+
+<Playground>
+  <NeoBaseComponent width={100} height={"75px"}></NeoBaseComponent>
+</Playground>
+
+<Playground>
+  <NeoBaseComponent
+    width={100}
+    height={'70px'}
+    >
+        <p align="center" style={{lineHeight: '75px', color: 'white'}}>Text</p>
+    </NeoBaseComponent>
+</Playground>
